@@ -78,8 +78,9 @@ let products = [
   
 ];
 let productCont = document.getElementById("grid_box");
-
-function displayProduct() {
+let filter =document.getElementById("category");
+function displayProduct(products) {
+  productCont.innerHTML="";
   products.forEach(function (ele) {
     let prod = document.createElement("div");
     let image = document.createElement("img");
@@ -97,3 +98,19 @@ function displayProduct() {
   });
 }
 displayProduct(products);
+
+filter.addEventListener("change",function(){
+  
+  if(filter.value==="All")
+  {
+    displayProduct(products);
+  }
+  else{
+    let filtered = products.filter(function(ele){
+      return ele.Name === filter.value;
+    })
+    
+    displayProduct(filtered);
+  }
+})
+

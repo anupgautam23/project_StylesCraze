@@ -37,6 +37,7 @@
   height: 40px;
   margin-right: 290px;
   display: flex;
+  cursor: pointer;
 }
 /* navbar logo style  */
 #navbar > div:nth-child(2) > img {
@@ -66,9 +67,11 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 30px 20px;
+  cursor: pointer;
 }
 #grid_box > div > img {
   width: 100%;
+  cursor: pointer;
 }
 img + p {
   color: rgb(194, 96, 127);
@@ -115,6 +118,7 @@ img + p + p + p + p {
   width: 100%;
 
   margin-bottom: 20px;
+  cursor: pointer;
 }
 #footer > div:nth-child(1) {
   background-image: linear-gradient(

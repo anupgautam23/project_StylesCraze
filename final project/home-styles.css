@@ -49,6 +49,9 @@
 #links>div:hover{
     color: #ef5873;
 }
+#links>div>a:hover{
+    color: #ef5873;
+}
 
 #container{
     width: 90%;

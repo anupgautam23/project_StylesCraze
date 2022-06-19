@@ -35,7 +35,7 @@
         margin-top: 50px;
       }
       label {
-        color: #bfccc8;
+        color: #bbc1bf;
 
         font-size: 25px;
         font-weight: bold;
@@ -75,7 +75,7 @@
         width: 90%;
         font-size: 25px;
         border: 0px;
-        border-radius: 5px;
+        border-radius: 10px;
         background-color: rgb(33, 85, 196);
         color: whitesmoke;
         padding: 10px;
@@ -120,7 +120,7 @@
           <button id="btn">Sign In</button>
           <p>
             Don't have an account?
-            <a target="_blank"  href="signup.html">Sign Up</a>
+            <a href="signup.html">Sign Up</a>
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@
       Ldata.push(loginData)
       localStorage.setItem('styleCrazeLogin', JSON.stringify(Ldata))
       alert('login successful')
-      window.location.href="homepage.html"
+      window.location.href="homePage.html"
     } else {
       alert('User not found')
     }

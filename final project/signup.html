@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp page</title>
+    <style>
+      body{
+        background-color: antiquewhite;
+        background-image: linear-gradient(-225deg, #B6CEE8 0%, #F578DC 100%);
+      }
+      #main {
+        width: 100%;
+        
+      }
+      #main > img {
+        width: 35%;
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        
+      }
+      #main > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* background-color: aquamarine; */
+        background-image: linear-gradient(to top, #e14fad 0%, #f9d423 100%);
+        border-radius: 20px;
+        box-sizing: border-box;
+        width: 35%;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px;
+      }
+      #main > div > h1 {
+        font-size: 30px;
+        text-align: center;
+        color: rgb(80, 72, 143);
+      }
+      form {
+        margin-top: 50px;
+      }
+      
+      label{
+        font-size: 22px;
+      }
+      input {
+        border-radius: 10px;
+        width: 90%;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 7px;
+      }
+      p {
+        font-size: 20px;
+      }
+      button {
+        width: 90%;
+        font-size: 22px;
+        margin-left: 10px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      button + p {
+        font-size: 22px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <img src="https://cdn2.stylecraze.com/wp-content/themes/buddyboss-child/images/sc-logo.png" alt="masai logo" />
+      <div>
+        <h1>Sign Up</h1>
+        <form>
+          <label for="">Full Name</label>
+          <br />
+          <input id="name" type="text" placeholder="Enter Your Name" />
+          <br />
+          <label for="">Email</label>
+          <br />
+          <input id="email" type="text" placeholder="Enter Your Email" />
+          <br />
+
+          <label for="">Password</label>
+          <br />
+
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter Your Password"
+          />
+          <br />
+          <p>
+            By signing up, I accept the stylesCraze
+            <a href="">Term of service</a>
+            and acknowledge the
+            <a href="">privacy policy</a>
+          </p>
+          <button id="btn">Sign Up</button>
+          <p>
+            Already have an account?
+            <a href="login.html">Sign In</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let form = document.querySelector('form')
+  let userData = JSON.parse(localStorage.getItem('sCrazeuserdata')) || []
+  form.addEventListener('submit', function () {
+    event.preventDefault()
+    let data = {
+      Name: form.name.value,
+      Email: form.email.value,
+      password: form.password.value,
+    }
+
+    if (checkEmail(data.Email)===true) {
+      userData.push(data)
+      localStorage.setItem('sCrazeuserdata', JSON.stringify(userData))
+      alert("signUp sucessfull")
+      window.location.reload()
+    } else {
+      alert('Account already exist')
+    }
+  })
+ 
+  function checkEmail(email) {
+    let filtered = userData.filter(function (element) {
+      return email === element.Email
+    })
+
+    if (filtered.length > 0) {
+      return false
+    } else {
+      return true
+    }
+  }
+</script>

@@ -11,6 +11,8 @@ A collaborative project, built in 5 days by a team of 2 developers.
 ## Live
 **https://sunny-melba-11e680.netlify.app/**
 
-## 🛠 Technology Used
-Javascript, HTML, CSS
+## 🛠 Tech Stacks
+Javascript
+ HTML
+ CSS
 
